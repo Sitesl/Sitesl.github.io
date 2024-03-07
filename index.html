@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARENA DE LANCE</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>ARENA DE LANCE</h1>
+</header>
+<main>
+<section id="register">
+<h2>Cadastro de Usuários</h2>
+<form id="user-form">
+<label for="username">Usuário:</label>
+<input type="text" id="username" name="username" required>
+<button type="submit">Cadastrar</button>
+</form>
+</section>
+<section id="auction">
+<h2>Leilão da Mamadeira</h2>
+<p>Descrição: Mamadeira de alta qualidade, perfeita para bebês.</p>
+<h3>Lances:</h3>
+<ul id="bid-history"></ul>
+<form id="bid-form">
+<label for="bid-amount">Seu Lance:</label>
+<input type="number" id="bid-amount" name="bid-amount" min="1" required>
+<button type="submit">Dar Lance</button>
+</form>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
