@@ -1,54 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auction Website</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <style>
-        /* Your custom CSS styles here */
-    </style>
+    <title>Leilão da Mamadeira Antiga</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <!-- Your HTML content here -->
-    <h1>Welcome to the Auction Website</h1>
-    <p>Check out our latest auctions below:</p>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="item1.jpg" class="card-img-top" alt="Item 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Item 1</h5>
-                        <p class="card-text">Description of Item 1</p>
-                        <a href="#" class="btn btn-primary">Bid Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="item2.jpg" class="card-img-top" alt="Item 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Item 2</h5>
-                        <p class="card-text">Description of Item 2</p>
-                        <a href="#" class="btn btn-primary">Bid Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="item3.jpg" class="card-img-top" alt="Item 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Item 3</h5>
-                        <p class="card-text">Description of Item 3</p>
-                        <a href="#" class="btn btn-primary">Bid Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <header>
+        <h1>Leilão da Mamadeira Antiga</h1>
+        <p><strong>Valor Atual:</strong> R$ 0,00</p>
+        <p><strong>Tempo Restante:</strong> 00:00:00</p>
+    </header>
+    <section class="product-details">
+        <h2>Detalhes da Mamadeira</h2>
+        <img src="images/mamadeira.jpg" alt="Mamadeira Antiga">
+        <p>Descrição: Mamadeira antiga em ótimo estado de conservação.</p>
+        <p><strong>Leilão encerra em:</strong> DD/MM/YYYY HH:MM:SS</p>
+        <form action="bid_system.php" method="post">
+            <label for="bid_amount">Seu Lance:</label>
+            <input type="number" id="bid_amount" name="bid_amount" min="1">
+            <button type="submit">Dar Lance</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Leilão da Mamadeira Antiga. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
