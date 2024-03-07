@@ -30,3 +30,14 @@ padding: 0;
 li {
 margin-bottom: 5px;
 }
+#bid-history {
+border: 1px solid #ccc;
+padding: 10px;
+}
+#bid-history li {
+border-bottom: 1px solid #ccc;
+padding: 5px 0;
+}
+#bid-history li:last-child {
+border-bottom: none;
+}
