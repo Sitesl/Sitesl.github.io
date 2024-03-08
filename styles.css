@@ -4,50 +4,35 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: #f4f4f4;
-    padding: 10px 20px;
+header, footer {
+    background-color: #333;
+    color: #fff;
     text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
+    padding: 10px 0;
 }
 
 main {
     padding: 20px;
 }
 
-.product {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.product img {
+img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 10px;
 }
 
 form {
     margin-top: 10px;
 }
 
-footer {
+button {
+    padding: 5px 10px;
     background-color: #333;
     color: #fff;
-    text-align: center;
-    padding: 10px 0;
+    border: none;
+    cursor: pointer;
 }
+
+button:hover {
+    background-color: #555;
+}
+
