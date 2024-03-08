@@ -29,6 +29,7 @@ bidForm.addEventListener("submit", function(event) {
     if (bidAmount >= currentBid + minIncrement) {
         document.getElementById("current-bid").innerText = bidAmount;
         addRankingEntry(bidName, bidAmount);
+        saveBid(bidName, bidAmount);
         alert("Lance realizado com sucesso!");
     } else {
         alert("O lance deve ser maior que o lance atual mais o incremento mínimo.");
@@ -41,3 +42,21 @@ function addRankingEntry(name, bidAmount) {
     newRow.innerHTML = `<td>${name}</td><td>R$ ${bidAmount}</td>`;
     rankingBody.appendChild(newRow);
 }
+
+function saveBid(name, amount) {
+    const bids = JSON.parse(localStorage.getItem("bids")) || [];
+    bids.push({ name, amount });
+    localStorage.setItem("bids", JSON.stringify(bids));
+}
+
+function loadBids() {
+    const bids = JSON.parse(localStorage.getItem("bids")) || [];
+    for (const bid of bids) {
+        addRankingEntry(bid.name, bid.amount);
+        if (bid.amount > parseInt(document.getElementById("current-bid").innerText)) {
+            document.getElementById("current-bid").innerText = bid.amount;
+        }
+    }
+}
+
+loadBids();
