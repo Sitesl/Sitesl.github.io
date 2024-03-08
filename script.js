@@ -20,6 +20,7 @@ function updateTimer() {
 }
 
 const bidForm = document.getElementById("bid-form");
+const bidForm = document.getElementById("bid-form");
 bidForm.addEventListener("submit", function(event) {
     event.preventDefault();
     const bidName = document.getElementById("bid-name").value;
@@ -36,12 +37,18 @@ bidForm.addEventListener("submit", function(event) {
     }
 });
 
-function addRankingEntry(name, bidAmount) {
-    const rankingBody = document.getElementById("ranking-body");
-    const newRow = document.createElement("tr");
-    newRow.innerHTML = `<td>${name}</td><td>R$ ${bidAmount}</td>`;
-    rankingBody.appendChild(newRow);
+function saveBid(name, amount) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "save_bid.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.responseText);
+        }
+    };
+    xhr.send("name=" + encodeURIComponent(name) + "&amount=" + encodeURIComponent(amount));
 }
+
 
 function saveBid(name, amount) {
     const bids = JSON.parse(localStorage.getItem("bids")) || [];
