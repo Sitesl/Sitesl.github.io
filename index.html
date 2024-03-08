@@ -1,38 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primeira Classe Leilões</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Primeira Classe Leilões</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Leilões em Destaque</a></li>
-                <li><a href="#">Próximos Leilões</a></li>
-                <li><a href="#">Sobre</a></li>
-            </ul>
-        </nav>
     </header>
     <main>
-        <section class="product">
-            <h2>Leilão em Destaque</h2>
-            <article>
-                <h3>Mamadeira Antiga</h3>
-                <p>Descrição da mamadeira e outras informações relevantes.</p>
-                <img src="mamadeira.jpg" alt="Mamadeira Antiga">
-                <p>Valor atual do lance mais alto: R$ <span id="highestBid">0,00</span></p>
-                <form id="bidForm">
-                    <label for="bidAmount">Faça seu lance:</label>
-                    <input type="number" id="bidAmount" name="bidAmount" min="0" step="50" required>
-                    <button type="submit">Dar Lance</button>
-                </form>
-                <p>Tempo restante: <span id="countdown">00:00:00</span></p>
-            </article>
+        <section id="product-details">
+            <h2>Mamadeira Antiga</h2>
+            <p>Descrição do produto...</p>
+            <img src="mamadeira.jpg" alt="Mamadeira Antiga">
+            <p>Valor atual do lance mais alto: R$ XX</p>
+            <form id="bid-form">
+                <label for="bid-amount">Seu lance:</label>
+                <input type="number" id="bid-amount" name="bid-amount" min="0" step="1">
+                <button type="submit">Dar Lance</button>
+            </form>
+        </section>
+        <section id="countdown-timer">
+            <h2>Tempo Restante:</h2>
+            <p id="timer">XX dias XX horas XX minutos XX segundos</p>
         </section>
     </main>
     <footer>
