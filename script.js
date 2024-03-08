@@ -60,3 +60,32 @@ function loadBids() {
 }
 
 loadBids();
+
+const bidForm = document.getElementById("bid-form");
+bidForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const bidName = document.getElementById("bid-name").value;
+    const bidAmount = parseInt(document.getElementById("bid-amount").value);
+    const currentBid = parseInt(document.getElementById("current-bid").innerText);
+    const minIncrement = 10;
+    if (bidAmount >= currentBid + minIncrement) {
+        document.getElementById("current-bid").innerText = bidAmount;
+        addRankingEntry(bidName, bidAmount);
+        saveBid(bidName, bidAmount);
+        alert("Lance realizado com sucesso!");
+    } else {
+        alert("O lance deve ser maior que o lance atual mais o incremento mínimo.");
+    }
+});
+
+function saveBid(name, amount) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "save_bid.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.responseText);
+        }
+    };
+    xhr.send("name=" + encodeURIComponent(name) + "&amount=" + encodeURIComponent(amount));
+}
