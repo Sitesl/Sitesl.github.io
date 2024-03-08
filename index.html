@@ -1,28 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Leilão da Mamadeira Antiga</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeira Classe Leilões</title>
+    <style>
+        /* Estilos CSS podem ser adicionados aqui */
+    </style>
 </head>
 <body>
     <header>
-        <h1>Leilão da Mamadeira Antiga</h1>
-        <p><strong>Valor Atual:</strong> R$ 0,00</p>
-        <p><strong>Tempo Restante:</strong> 00:00:00</p>
+        <h1>Primeira Classe Leilões</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Leilões em Destaque</a></li>
+                <li><a href="#">Próximos Leilões</a></li>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </nav>
     </header>
-    <section class="product-details">
-        <h2>Detalhes da Mamadeira</h2>
-        <img src="images/mamadeira.jpg" alt="Mamadeira Antiga">
-        <p>Descrição: Mamadeira antiga em ótimo estado de conservação.</p>
-        <p><strong>Leilão encerra em:</strong> DD/MM/YYYY HH:MM:SS</p>
-        <form action="bid_system.php" method="post">
-            <label for="bid_amount">Seu Lance:</label>
-            <input type="number" id="bid_amount" name="bid_amount" min="1">
-            <button type="submit">Dar Lance</button>
-        </form>
-    </section>
+    <main>
+        <section>
+            <h2>Leilão em Destaque</h2>
+            <article>
+                <h3>Mamadeira Antiga</h3>
+                <p>Descrição da mamadeira e outras informações relevantes.</p>
+                <img src="caminho_para_a_imagem_da_mamadeira.jpg" alt="Mamadeira Antiga">
+                <p>Valor atual do lance: R$ X,XX</p>
+                <a href="#">Faça seu lance!</a>
+            </article>
+        </section>
+        <section>
+            <h2>Próximos Leilões</h2>
+            <ul>
+                <li>
+                    <h3>Nome do Produto</h3>
+                    <p>Descrição do produto e outras informações relevantes.</p>
+                    <img src="caminho_para_a_imagem_do_produto.jpg" alt="Nome do Produto">
+                    <p>Data do leilão: DD/MM/YYYY</p>
+                    <a href="#">Saiba mais</a>
+                </li>
+                <!-- Adicione mais <li> conforme necessário para outros leilões -->
+            </ul>
+        </section>
+    </main>
     <footer>
-        <p>&copy; 2024 Leilão da Mamadeira Antiga. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Primeira Classe Leilões. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
