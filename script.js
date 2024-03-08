@@ -22,12 +22,13 @@ function updateTimer() {
 const bidForm = document.getElementById("bid-form");
 bidForm.addEventListener("submit", function(event) {
     event.preventDefault();
+    const bidName = document.getElementById("bid-name").value;
     const bidAmount = parseInt(document.getElementById("bid-amount").value);
     const currentBid = parseInt(document.getElementById("current-bid").innerText);
     const minIncrement = 10;
     if (bidAmount >= currentBid + minIncrement) {
         document.getElementById("current-bid").innerText = bidAmount;
-        addRankingEntry("Usuário", bidAmount); // Adicione o nome do usuário aqui
+        addRankingEntry(bidName, bidAmount);
         alert("Lance realizado com sucesso!");
     } else {
         alert("O lance deve ser maior que o lance atual mais o incremento mínimo.");
@@ -40,4 +41,3 @@ function addRankingEntry(name, bidAmount) {
     newRow.innerHTML = `<td>${name}</td><td>R$ ${bidAmount}</td>`;
     rankingBody.appendChild(newRow);
 }
-
