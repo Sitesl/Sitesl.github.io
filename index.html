@@ -47,3 +47,25 @@
     <script src="script.js"></script>
 </body>
 </html>
+<?php
+include "config.php";
+
+$sql = "SELECT * FROM bids ORDER BY amount DESC";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<table>";
+    echo "<thead><tr><th>Nome</th><th>Lance Mais Alto</th></tr></thead>";
+    echo "<tbody>";
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr><td>" . $row["name"] . "</td><td>R$ " . $row["amount"] . "</td></tr>";
+    }
+    echo "</tbody>";
+    echo "</table>";
+} else {
+    echo "Nenhum lance foi feito ainda.";
+}
+
+$conn->close();
+?>
+
