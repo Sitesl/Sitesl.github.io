@@ -50,3 +50,27 @@
     </footer>
 </body>
 </html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeira Classe Leilões - Produto</title>
+    <style>
+        /* Estilos CSS podem ser adicionados aqui */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Produto em Leilão</h1>
+        <p>Valor atual do lance mais alto: <span id="highestBid">R$ 0,00</span></p>
+        <p>Incremento mínimo de lance: R$ 50,00</p>
+        <form id="bidForm">
+            <label for="bidAmount">Faça seu lance:</label>
+            <input type="number" id="bidAmount" name="bidAmount" min="0" step="50" required>
+            <button type="submit">Dar Lance</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
