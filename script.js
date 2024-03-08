@@ -23,12 +23,21 @@ const bidForm = document.getElementById("bid-form");
 bidForm.addEventListener("submit", function(event) {
     event.preventDefault();
     const bidAmount = parseInt(document.getElementById("bid-amount").value);
-    const currentBid = parseInt(document.getElementById("current-bid").innerText.replace("R$ ", ""));
+    const currentBid = parseInt(document.getElementById("current-bid").innerText);
     const minIncrement = 10;
     if (bidAmount >= currentBid + minIncrement) {
-        document.getElementById("current-bid").innerText = `R$ ${bidAmount}`;
+        document.getElementById("current-bid").innerText = bidAmount;
+        addRankingEntry("Usuário", bidAmount); // Adicione o nome do usuário aqui
         alert("Lance realizado com sucesso!");
     } else {
         alert("O lance deve ser maior que o lance atual mais o incremento mínimo.");
     }
 });
+
+function addRankingEntry(name, bidAmount) {
+    const rankingBody = document.getElementById("ranking-body");
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `<td>${name}</td><td>R$ ${bidAmount}</td>`;
+    rankingBody.appendChild(newRow);
+}
+
