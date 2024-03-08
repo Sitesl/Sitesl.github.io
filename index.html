@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primeira Classe Leilões</title>
-    <style>
-        /* Estilos CSS podem ser adicionados aqui */
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -21,56 +19,25 @@
         </nav>
     </header>
     <main>
-        <section>
+        <section class="product">
             <h2>Leilão em Destaque</h2>
             <article>
                 <h3>Mamadeira Antiga</h3>
                 <p>Descrição da mamadeira e outras informações relevantes.</p>
-                <img src="caminho_para_a_imagem_da_mamadeira.jpg" alt="Mamadeira Antiga">
-                <p>Valor atual do lance: R$ X,XX</p>
-                <a href="#">Faça seu lance!</a>
+                <img src="mamadeira.jpg" alt="Mamadeira Antiga">
+                <p>Valor atual do lance mais alto: R$ <span id="highestBid">0,00</span></p>
+                <form id="bidForm">
+                    <label for="bidAmount">Faça seu lance:</label>
+                    <input type="number" id="bidAmount" name="bidAmount" min="0" step="50" required>
+                    <button type="submit">Dar Lance</button>
+                </form>
+                <p>Tempo restante: <span id="countdown">00:00:00</span></p>
             </article>
-        </section>
-        <section>
-            <h2>Próximos Leilões</h2>
-            <ul>
-                <li>
-                    <h3>Nome do Produto</h3>
-                    <p>Descrição do produto e outras informações relevantes.</p>
-                    <img src="caminho_para_a_imagem_do_produto.jpg" alt="Nome do Produto">
-                    <p>Data do leilão: DD/MM/YYYY</p>
-                    <a href="#">Saiba mais</a>
-                </li>
-                <!-- Adicione mais <li> conforme necessário para outros leilões -->
-            </ul>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Primeira Classe Leilões. Todos os direitos reservados.</p>
     </footer>
-</body>
-</html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primeira Classe Leilões - Produto</title>
-    <style>
-        /* Estilos CSS podem ser adicionados aqui */
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Produto em Leilão</h1>
-        <p>Valor atual do lance mais alto: <span id="highestBid">R$ 0,00</span></p>
-        <p>Incremento mínimo de lance: R$ 50,00</p>
-        <form id="bidForm">
-            <label for="bidAmount">Faça seu lance:</label>
-            <input type="number" id="bidAmount" name="bidAmount" min="0" step="50" required>
-            <button type="submit">Dar Lance</button>
-        </form>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
-
